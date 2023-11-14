@@ -1,8 +1,8 @@
 <template>
   <div class="container-main">
-    <img src="/assets/photo/m01.png" alt="photo" />
+    <img :src="photo.image" alt="photo" />
     <div class="photo-content">
-      <p>05.21.Morning</p>
+      <p>{{ photo.text }}</p>
     </div>
   </div>
 </template>
@@ -10,14 +10,8 @@
 <script>
 export default {
   name: "HealthApp1203Photo",
+  props: ["photo"], // tach ra image, text // khi v-bind cho photo thi can bind photo.image va photo.text
 
-  data() {
-    return {};
-  },
-
-  mounted() {},
-
-  methods: {},
 };
 </script>
 
@@ -25,10 +19,7 @@ export default {
 .container-main {
   position: relative;
 }
-.container-main img {
-  width: 234px;
-  height: 234px;
-}
+
 .photo-content {
   background-color: #ffcc21;
   width: 120px;

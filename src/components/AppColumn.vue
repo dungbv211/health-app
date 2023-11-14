@@ -1,27 +1,20 @@
 <template>
   <div class="container-main">
     <div class="column-photo">
-      <img src="/assets/column/column-1.png" alt="column1" />
-      <div class="column-photo__text">2021.05.17 23:25</div>
+      <img :src="column.image" alt="column" />
+      <div class="column-photo__text">{{ column.date }}</div>
     </div>
     <span class="column-content">
-      魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…
+      {{ column.description }}
     </span>
-    <span class="column-name">#魚料理 #和食 #DHA</span>
+    <span class="column-name">{{ column.tag }}</span>
   </div>
 </template>
 
 <script>
 export default {
   name: "HealthApp1203Column",
-
-  data() {
-    return {};
-  },
-
-  mounted() {},
-
-  methods: {},
+  props: ["column"],
 };
 </script>
 
@@ -50,7 +43,6 @@ export default {
   font-size: 15px;
   font-weight: 300;
   letter-spacing: 0.075px;
-
 }
 .column-name {
   color: #ff963c;
